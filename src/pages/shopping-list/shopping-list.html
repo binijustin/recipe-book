@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Shopping List</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form #f="ngForm" (ngSubmit)="OnAddItem(f)">
+    <ion-list>
+      <ion-item>
+        <ion-label fixed>Name</ion-label>
+        <ion-input  type="text" name="ingredientName" placeholder="Apple" ngModel required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label fixed>Quantity</ion-label>
+        <ion-input required type="numbe" name="qty"  placeholder="2" ngModel required></ion-input>
+      </ion-item>
+    </ion-list>
+    <button ion-button type="submit" block [disabled]="!f.valid">Add</button>
+  </form>
+</ion-content>
